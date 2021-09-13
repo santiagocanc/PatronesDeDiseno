@@ -18,4 +18,4 @@ A coffee shop wants to be able to automatically order caffees according to the q
 
 ## Class Diagram
 
-![alt text](./etc/factory.urm/png "Class diagram")
+![](./etc/factory.urm.png "Class diagram")
