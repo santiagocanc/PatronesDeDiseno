@@ -1,0 +1,35 @@
+@startuml
+
+package Launcher{
+	class Client{
+		+nombre: String
+		+Client(String)
+		+toString():String
+	}
+	class Test{
+		+Test()
+		+test(String,int):void
+	}
+	class Connection{
+		-c: Connection {static}
+		-salas:Map<Integer,ArrayList<Client>>
+		-Connection()
+		+getConnection():Connection {static}
+		+addClient(Client,int):void
+		-addSala(int):void
+		+getSalas():Map
+		-getSala(int):ArrayList<Client>
+		-findClient(String,int):Client
+		+delClient(String,int):void
+	}
+	class Main{
+		main(String[]):void {static}
+	}
+}
+
+Connection --> Connection:-c
+Test ..> Client
+Test ..> Connection
+Main ..> Connection
+
+@enduml
