@@ -1,0 +1,41 @@
+@startuml
+package Payment{
+	class PaypalAPI{
+		-number: String
+		-price: String
+		+PaypalAPI()
+		+setNumero(String):void
+		+setPrice(double):void
+		+pay():void
+	}
+	class PSEAPI{
+		-number: String
+		-price: String
+		+PSEAPI()
+		+setNumero(String):void
+		+setPrice(double):void
+		+pay():void
+		-calculatePrice():String
+	}
+	class paymentFacade{
+		+paymentFacade()
+		+paypalPay(String,int):void
+		+psePay(String,int):void
+	}
+	interface IPaymentMethod{
+		pay():void {abstract}
+		setNumero(String):void {abstract}
+		setPrice(double):void {abstract}\
+	}
+}
+package Launcher{
+	class Main{
+		main(String[]):void {static}
+	}
+}
+
+PaypalAPI ..|> IPaymentMethod
+PSEAPI ..|> IPaymentMethod
+paymentFacade --> IPaymentMethod
+Main ..> paymentFacade 
+@enduml

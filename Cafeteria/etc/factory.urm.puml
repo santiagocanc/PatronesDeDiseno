@@ -1,0 +1,27 @@
+@startuml
+package Cafeteria{
+	class Americano{
+		+Americano()
+		+hacerCafe():String
+	}
+	class Latte{
+		+Latte()
+		+hacerCafe():String
+	}
+	class Mocca{
+		+Mocca()
+		+hacerCafe():String
+	}
+	interface ICafe{
+		+hacerCafe():String {abstract}
+	}
+	class CafeFactory{
+		+CafeFactory()
+		+getCafe(String):ICafe
+	}
+}
+Americano ..|> ICafe
+Latte ..|> ICafe
+Mocca ..|> ICafe
+CafeFactory -->ICafe
+@enduml
