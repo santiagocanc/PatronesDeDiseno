@@ -1,5 +1,5 @@
 ---
-Design Pattern:Factory
+DesignPattern: Factory
 Title: Cafeteria
 Categories: Creational
 Lenguage: es
@@ -18,4 +18,4 @@ A coffee shop wants to be able to automatically order caffees according to the q
 
 ## Class Diagram
 
-<img src='https://g.graviso.com/svg?'+'./etc/factory.urm.puml'/>
+![](./etc/factory.urm.png "Class diagram")
