@@ -1,0 +1,91 @@
+@startuml
+package Game{
+	interface IJuego{
+		+jugar():String {abstract}
+	}
+	package apex{
+		interface IApex{
+			+disparar():String {abstract}
+		}
+		class ApexXbox implements Game.IJuego, IApex {
+			+ApexXbox()
+			+jugar():String
+			+disparar():String
+		}
+		class ApexPC implements Game.IJuego, IApex{
+			+ApexPC()
+			+jugar():String
+			+disparar():String
+		}
+	}
+	package fifita{
+		interface IFifa{
+			+patear():String {abstract}
+		}
+		class FifaXbox implements Game.IJuego, IFifa{
+			+FifaXbox()
+			+jugar():String
+			+patear():String
+		}
+		class FifaPC implements Game.IJuego,IFifa{
+			+FifaPC()
+			+jugar():String
+			+patear():String
+		}
+	}
+	package minecraft{
+		interface IMinecraft{
+			+construir():String {abstract}
+		}
+		class MinecraftXbox implements Game.IJuego, IMinecraft{
+			+MinecraftXbox()
+			+jugar():String
+			+construir():String
+		}
+		class MinecraftPC implements Game.IJuego, IMinecraft{
+			+MinecraftPC()
+			+jugar():String
+			+construir():String
+		}
+	}
+}
+package factory{
+	interface IGameFactory{
+		-getApex():IApex {abstract}
+		-getFifa():IFifa {abstract}
+		-getMinecraft():IMinecraft {abstract}
+		+getGame(): IJuego {abstract}
+	}
+	class GameFactory{
+		+GameFactory()
+		+getFactory(int):IGameFactory
+	}
+	class PCFactory implements IGameFactory{
+		+PCFactory()
+		-getApex():ApexPC
+		-getFifa():FifaPC
+		-getMinecraft():MinecraftPC
+		+getGame(int):IJuego
+	}
+	class XboxFactory implements IGameFactory{
+		+XboxFactory()
+		-getApex():ApexXbox
+		-getFifa():FifaXbox
+		-getMinecraft():MinecraftXbox
+		+getGame(int):IJuego
+	}
+}
+
+package Launcher{
+	class Client{
+		main(String[]): void {static}
+	}
+}
+
+Client ..> GameFactory
+GameFactory ..> IGameFactory
+IGameFactory ..> IJuego
+PCFactory ..> IJuego
+XboxFactory ..> IJuego
+
+@enduml
