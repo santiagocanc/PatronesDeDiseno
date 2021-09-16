@@ -1,5 +1,3 @@
-Comment: README design based on iluwatar/Java-desing-patterns
-
 # Design patterns
 
 >These are techniques for solving common problems in software development and other areas related to interaction or interface design.
@@ -26,4 +24,6 @@ Comment: README design based on iluwatar/Java-desing-patterns
 
 ![](./etc/facade.png)
 
+## credits
 
+* [README design](https://github.com/iluwatar/java-design-patterns)
