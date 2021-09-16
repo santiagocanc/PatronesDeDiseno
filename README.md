@@ -6,23 +6,23 @@
 
 ## Factory
 
-![](./etc/factory.png)
+![](./etc/factory.png "https://reactiveprogramming.io/blog/es/patrones-de-diseno/factory")
 
 ## Abstract Factory
 
-![](./etc/abstractFactory.png)
+![](./etc/abstractFactory.png "https://reactiveprogramming.io/blog/es/patrones-de-diseno/abstract-facade")
 
 ## Builder
 
-![](./etc/builder.png)
+![](./etc/builder.png "https://reactiveprogramming.io/blog/es/patrones-de-diseno/builder")
 
 ## Singleton
 
-![](./etc/singleton.png)
+![](./etc/singleton.png "https://reactiveprogramming.io/blog/es/patrones-de-diseno/singleton")
 
 ## Facade
 
-![](./etc/facade.png)
+![](./etc/facade.png "https://reactiveprogramming.io/blog/es/patrones-de-diseno/facade")
 
 ## credits
 
