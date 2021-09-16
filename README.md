@@ -1,6 +1,29 @@
-# PatronesDeDiseno
-Trabajos de patrones
+Comment: README design based on iluwatar/Java-desing-patterns
 
-Esto es un atraco By: Ducux
+# Design patterns
 
-README desing based on: iluwatar/Java-desing-patterns
+>These are techniques for solving common problems in software development and other areas related to interaction or interface design.
+>
+>A design pattern is a solution to a design problem.
+
+## Factory
+
+![](./etc/factory.png)
+
+## Abstract Factory
+
+![](./etc/abstractFactory.png)
+
+## Builder
+
+![](./etc/builder.png)
+
+## Singleton
+
+![](./etc/singleton.png)
+
+## Facade
+
+![](./etc/facade.png)
+
+
