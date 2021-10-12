@@ -4,26 +4,45 @@
 >
 >A design pattern is a solution to a design problem.
 
-## Factory
+## Creational patterns
+
+### [Factory](./Cafeteria)
 
 ![](./etc/factory.png "https://reactiveprogramming.io/blog/es/patrones-de-diseno/factory")
 
-## Abstract Factory
+### [Abstract Factory](./Videojuego)
 
 ![](./etc/abstractFactory.png "https://reactiveprogramming.io/blog/es/patrones-de-diseno/abstract-facade")
 
-## Builder
+### [Builder](./Farmaceutica)
 
 ![](./etc/builder.png "https://reactiveprogramming.io/blog/es/patrones-de-diseno/builder")
 
-## Singleton
+### [Singleton](./Singleton)
 
 ![](./etc/singleton.png "https://reactiveprogramming.io/blog/es/patrones-de-diseno/singleton")
 
-## Facade
+### Prototype
+
+![](./etc/prototype.png "https://reactiveprogramming.io/blog/es/patrones-de-diseno/prototype")
+
+## Structural patterns
+
+### [Facade](./Facade)
 
 ![](./etc/facade.png "https://reactiveprogramming.io/blog/es/patrones-de-diseno/facade")
+
+### Composite
+
+![](./etc/facade.png "https://reactiveprogramming.io/blog/es/patrones-de-diseno/composite")
+
+## Behavioral patterns
+
+### Observer
+
+![](./etc/facade.png "https://reactiveprogramming.io/blog/es/patrones-de-diseno/observer")
 
 ## credits
 
 * [README design](https://github.com/iluwatar/java-design-patterns)
+
