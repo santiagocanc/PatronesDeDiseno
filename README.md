@@ -24,7 +24,7 @@
 
 ### Prototype
 
-![](./etc/prototype.png "https://reactiveprogramming.io/blog/es/patrones-de-diseno/prototype")
+![](./etc/prototype-diagram.png "https://reactiveprogramming.io/blog/es/patrones-de-diseno/prototype")
 
 ## Structural patterns
 
