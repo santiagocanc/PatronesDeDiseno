@@ -32,7 +32,7 @@
 
 ![](./etc/facade.png "https://reactiveprogramming.io/blog/es/patrones-de-diseno/facade")
 
-### [Composite](./composite)
+### [Composite](./PC)
 
 ![](./etc/facade.png "https://reactiveprogramming.io/blog/es/patrones-de-diseno/composite")
 
