@@ -1,0 +1,29 @@
+@startuml
+
+package Pc{
+    
+    interface composite{
+        +computar():int
+    }
+    
+    class procesos implements composite{
+        -time_exec:int
+        -elements: ArrayList<composite>
+        +computar():int
+    }
+    
+    class subprocesos implements composite{
+        -time_exec:int
+        +subprocesos(int)
+        +computar():int
+    }
+}
+
+class Main{
+    + main(args: String[]): void {static}
+}
+
+Main --> composite
+composite --* procesos
+
+@enduml

@@ -1,0 +1,31 @@
+@startuml
+
+package Redes{
+
+    Abstract Observador{
+        #com: Conexion
+        +actualizar():void {Abstract}
+    }
+    
+    class Conexion{
+        -obs: ArrayList<Observador>
+        -Status: int
+        +add(Observador):void
+        +updateObservers():void
+    }
+    
+    class PC extends Observador{
+        +PC(Conexion)
+        +IO():void
+        +actualizar():void
+    }
+    
+    class Main{
+        + main(args: String[]): void {static}
+    }
+
+}
+
+Conexion *-- Observador
+
+@enduml
