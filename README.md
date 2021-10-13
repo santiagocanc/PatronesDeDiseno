@@ -22,7 +22,7 @@
 
 ![](./etc/singleton.png "https://reactiveprogramming.io/blog/es/patrones-de-diseno/singleton")
 
-### Prototype
+### [Prototype](./Proto_type)
 
 ![](./etc/prototype-diagram.png "https://reactiveprogramming.io/blog/es/patrones-de-diseno/prototype")
 
@@ -32,7 +32,7 @@
 
 ![](./etc/facade.png "https://reactiveprogramming.io/blog/es/patrones-de-diseno/facade")
 
-### Composite
+### [Composite](./composite)
 
 ![](./etc/facade.png "https://reactiveprogramming.io/blog/es/patrones-de-diseno/composite")
 
