@@ -1,0 +1,40 @@
+@startuml
+
+package model{
+
+    Abstract ITicket{
+        - id_shop: int
+        + ITicket()
+        # ITicket(ITicket)
+        + Clone():ITicket {Abstract}
+    }
+    
+    class ticket_festival extends ITicket{
+        -id: String
+        -user: String
+        -date: String
+        +ticket_festival()
+        -ticket_festiva(ticket_festival)
+        +Clone():ITicket
+        +toString():String
+    }
+    
+    class aFactura extends ITicket{
+        -id: String
+        -user: String
+        +Factura()
+        -Factura(ticket_festival)
+        +Clone():ITicket
+        +toString():String
+    }
+    
+
+}
+
+class Main{
+    +main(args: String[]): void {static}
+}
+
+Main --> ITicket : "use"
+
+@enduml
