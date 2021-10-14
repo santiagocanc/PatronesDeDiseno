@@ -1,0 +1,64 @@
+@startuml
+
+package mage{
+    Abstract component{
+        -hp:int
+        -power:int
+        -def:int
+        -pen:int
+        -cd:int
+        +getStats():String {Abstract}
+        +setters(): void {Abstract}
+        +getters(): int {Abstract}
+    }
+    
+    Abstract Decorator extends component{
+        -element : component
+        +Decorator(component)
+        +setItem():void {Abstract}
+        +getStats():String
+        +setters():void {Abstract}
+        
+    }
+    
+    class heBot extends component{
+        -hp:int
+        -power:int
+        -def:int
+        -pen:int
+        -cd:int
+        +getStats():String
+        +toString():String
+    }
+    
+    package objets{
+        class Bancroft extends Decorator{
+        +public Bancroft(component element)
+        +getStats():String
+        +setItem():void
+        }
+        class Typhons extends Decorator{
+        +public Typhons(component element)
+        +getStats():String
+        +setItem():void
+        }
+        class Soul_Reaver extends Decorator{
+        +public Soul_Reaver(component element)
+        +getStats():String
+        +setItem():void
+        }
+        class Stone_of_Fal extends Decorator{
+        +public Stone_of_Fal(component element)
+        +getStats():String
+        +setItem():void
+        }
+    }
+}
+
+class Launcher{
+    +main(String[] args):void {static}
+}
+
+Launcher --> component
+component <--* Decorator
+@enduml
