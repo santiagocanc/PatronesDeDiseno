@@ -147,3 +147,11 @@ Hebo 4 items HeBot [hp=650, power=335, def=119, pen=10, cd=10] // bancroft, Typh
 ## Class Diagram
 
 ![](./etc/decorator.umr.png "Class diagram")
+
+## Credits
+
+* https://profile.es/blog/patrones-de-diseno-de-software/
+* https://refactoring.guru/es/design-patterns/decorator
+* https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/que-es-el-patron-de-diseno-decorator/
+* https://rootear.com/desarrollo/patron-decorator
+* https://github.com/iluwatar/java-design-patterns/tree/master/decorator
