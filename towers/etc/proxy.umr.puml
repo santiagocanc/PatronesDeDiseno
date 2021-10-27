@@ -1,0 +1,89 @@
+@startuml
+
+abstract Towers{
+    - NUM_TEAM_ALLOWED:int
+    enter(Wizard w): void {abstract}
+    + info():void{abstract}
+    + in_game():void{abstarct}
+}
+
+class ConquestTeam extends Towers{
+    - team: ArrayList<Wizard>
+    - Name: String
+    - modo: String
+    + ConquestTeam(String) {static}
+    - team_string(): String
+    enter(Wizard): void
+    + info():void
+    + in_game():void
+}
+
+class joustTeam extends Towers{
+    - team: ArrayList<Wizard>
+    - Name: String
+    - modo: String
+    + ConquestTeam(String) {static}
+    - team_string(): String
+    enter(Wizard): void
+    + info():void
+    + in_game():void
+}
+
+class proxy extends Towers{
+
+    - gods: int
+    - twr: Towers
+    + proxy(Towers) {static}
+    enter(Wizard): void
+    + info():void
+    + in_game():void
+
+}
+
+abstract rols{
+    + name(): String {abstract}
+    + start(): String {abstract}
+    + normal_game(): String {abstract}
+    + team_figth(): String {abstract}
+    + end(): String
+    + gank_m(): String
+    + gank_l(): String
+    + gank_r(): String
+}
+
+class adc extends rols{
+    + name(): String 
+    + start(): String 
+    + normal_game(): String 
+    + team_figth(): String 
+}
+class mage extends rols{
+    + name(): String 
+    + start(): String 
+    + normal_game(): String 
+    + team_figth(): String 
+}
+class jungle extends rols{
+    + name(): String 
+    + start(): String 
+    + normal_game(): String 
+    + team_figth(): String 
+}
+class solo extends rols{
+    + name(): String 
+    + start(): String 
+    + normal_game(): String 
+    + team_figth(): String 
+}
+class support extends rols{
+    + name(): String 
+    + start(): String 
+    + normal_game(): String 
+    + team_figth(): String 
+}
+
+proxy --- rols
+ConquestTeam *-- proxy
+joustTeam *-- proxy
+
+@enduml

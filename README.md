@@ -48,7 +48,19 @@ It provides a simplified interface to a library, framework or any other complex 
 
 Used to group objects as a single object. It allows you to compose objects into tree structures and then work with these structures as if they were individual objects.
 
-<img src=./etc/facade.png width="500" height="400">
+<img src=https://reactiveprogramming.io/blog/en/design-patterns/composite width="500" height="400">
+
+### [Decorator](./Smote)
+
+A proxy control access to the original object, allowing you to do something before or after the request reacher the original objects.
+
+<img src=https://reactiveprogramming.io/blog/en/design-patterns/decorador width="500" height="400">
+
+### [Proxy](./towers)
+
+Proxy pattern is used when we need to create a wrapper to cover the main object’s complexity from the client.
+
+<img src=https://reactiveprogramming.io/blog/en/design-patterns/proxy width="500" height="400">
 
 ## Behavioral patterns
 
@@ -56,7 +68,7 @@ Used to group objects as a single object. It allows you to compose objects into 
 
 Allows to define a subscription mechanism to notify several objects about any event that happens to the object being observed.
 
-<img src=./etc/facade.png width="500" height="400">
+<img src=https://reactiveprogramming.io/blog/en/design-patterns/observer width="500" height="400">
 
 ## credits
 
