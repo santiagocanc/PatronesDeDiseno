@@ -8,7 +8,7 @@ Language: es/en
 ---
 ## Facade Pattern
 
-Facade define a higher-level interface that makes the subsystem easier to use
+Facade defines a higher-level interface that makes the subsystem easier to use
 
 Wikipedia
 
