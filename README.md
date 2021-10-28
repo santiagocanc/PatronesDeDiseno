@@ -10,7 +10,7 @@
 
 Provides an interface to create objects in a superclass, but allows subclasses to alter the type of objects to be created. Provides implicit object instantiation through common interfaces.
 
-<img src="https://reactiveprogramming.io/books/patterns/img/patterns-articles/factory-diagram.png" width="500" height="400">
+<img src="https://reactiveprogramming.io/books/patterns/img/patterns-articles/factory-method-diagram.png" width="500" height="400">
 
 ### [Abstract Factory](./Videojuego)
 
