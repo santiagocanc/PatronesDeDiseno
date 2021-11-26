@@ -1,0 +1,470 @@
+@startuml
+skinparam groupInheritance 2
+scale 2000 width
+
+abstract Game{
+    - s:state
+    - NUM_TEAM_ALLOWED: int
+    + getNUM_TEAM_ALLOWED(): int
+    + setNUM_TEAM_ALLOWED(int): void
+    # enter(Wizard):void {abstract}
+    + info() : void {abstract}
+    + stats() : void {abstract}
+    + in_game() : void {abstract}
+}
+
+package proxy{
+package template{
+abstract Map extends Game{
+    - Num_phonex: int
+    - Num_tower: int
+    - boss: String
+    # team_string(): String {abstract}
+    + getNum_phonex(): int
+    + setNum_phonex(int):void
+    + getNum_tower():int
+    + setNum_tower(int):void
+    + getBoss():String
+    + setBoss():void
+}
+
+
+class joustMap extends Map{
+    - team: ArrayList<Wizard>
+    - Name: String
+    - modo:String
+    + joustMap() {static}
+    # team_string(): String
+    # enter(Wizard): void
+    + info() : void 
+    + stats() : void 
+    + in_game() : void 
+}
+class conquestMap extends Map{
+    - team: ArrayList<Wizard>
+    - Name: String
+    - modo:String
+    + joustMap() {static}
+    # team_string(): String
+    # enter(Wizard): void
+    + info() : void 
+    + stats() : void 
+    + in_game() : void 
+}
+}
+
+class proxy extends Game{
+    - gods : int
+    - twr : Game
+    + proxy() {static}
+    - validate(): boolean
+    # enter(Wizard): void
+    + info() : void 
+    + stats() : void 
+    + in_game() : void 
+}
+}
+class Wizard{
+    - name: String
+    - rol: component
+    +Wizard(String, component) {static}
+    + toString(): String
+    + getStats(): String
+    - store(): void
+    - doFire(): void
+    - doGold(): void
+    + action(String):void
+    - work(Action):void
+}
+
+enum Actions{
+    SHOP
+    FIRE
+    GOLD
+}
+
+enum shop{
+    bancroft
+    pridwen
+    Etherial
+    blackthorn
+    dagger
+    desolation
+    contagion
+    jotunns
+    + Magical() : shop[] {static}
+    + physical() : shop[] {static}
+    + All() : shop[] {static}    
+}
+package decorador{
+abstract component{
+    -name: String
+    -hp:int
+    -power:int
+    -def:int
+    -pen:int
+    -cd:int
+    ____
+    ..Some getters..
+    +getName():String
+    +getHP():String
+    ..Some setters..
+    + setName():void{abstarct}
+    + setHP():void{abstarct}
+}
+
+abstract decorator extends component{
+    - element: component
+    + decorator(component) {static}
+    ____
+    + setItem(): void
+    ..component setters..
+    + setName():void
+    + setHP():void
+}
+
+package conditions{
+    class bad_fireC{
+        + bad_fireC() {static}
+        + getStats() : String
+        + setItem(): void
+        + values(): int[]
+    }
+    class bad_fireT {
+        + bad_fireT() {static}
+        + getStats() : String
+        + setItem(): void
+        + values(): int[]
+    }
+    class bad_fireR {
+        + bad_fireR() {static}
+        + getStats() : String
+        + setItem(): void
+        + values(): int[]
+    }
+    class bad_goldC {
+        + bad_goldC() {static}
+        + getStats() : String
+        + setItem(): void
+        + values(): int[]
+    }
+    class bad_goldT {
+        + bad_goldT() {static}
+        + getStats() : String
+        + setItem(): void
+        + values(): int[]
+    }
+    class bad_goldR {
+        + bad_goldR() {static}
+        + getStats() : String
+        + setItem(): void
+        + values(): int[]
+    }
+    class good_fireC {
+        + good_fireC() {static}
+        + getStats() : String
+        + setItem(): void
+        + values(): int[]
+    }
+    class good_fireT {
+        + good_fireT() {static}
+        + getStats() : String
+        + setItem(): void
+        + values(): int[]
+    }
+    class good_fireR {
+        + good_fireR() {static}
+        + getStats() : String
+        + setItem(): void
+        + values(): int[]
+    }
+    class good_goldC {
+        + good_goldC() {static}
+        + getStats() : String
+        + setItem(): void
+        + values(): int[]
+    }
+    class good_goldT {
+        + good_goldT() {static}
+        + getStats() : String
+        + setItem(): void
+        + values(): int[]
+    }
+    class good_goldR {
+        + good_goldR() {static}
+        + getStats() : String
+        + setItem(): void
+        + values(): int[]
+    }
+}
+
+package items{
+    class bancroft{
+        + bancroft(component) {static}
+        + getStats():String
+        + setItem():void
+    }
+    class blackthron{
+        + blackthron(component) {static}
+        + getStats():String
+        + setItem():void
+    }
+    class Contagion{
+        + Contagion(component) {static}
+        + getStats():String
+        + setItem():void
+    }
+    class Dagger{
+        + Dagger(component) {static}
+        + getStats():String
+        + setItem():void
+    }
+    class desolation{
+        + desolation(component) {static}
+        + getStats():String
+        + setItem():void
+    }
+    class Ethereal{
+        + Ethereal(component) {static}
+        + getStats():String
+        + setItem():void
+    }
+    class jotunns{
+        + jotunns(component) {static}
+        + getStats():String
+        + setItem():void
+    }
+    class pridwen{
+        + pridwen(component) {static}
+        + getStats():String
+        + setItem():void
+    }
+    
+}
+
+package rols{
+    class adc{
+        -name: String
+        -hp:int
+        -power:int
+        -def:int
+        -pen:int
+        -cd:int
+        ____
+        + adc(ICharacter) {static}
+        + getStats():String
+        ..component setters..
+        + setName():void
+        + setHP():void
+        ..component getters..
+        + getName():void
+        + getHP():void
+    }
+    class jungle{
+        -name: String
+        -hp:int
+        -power:int
+        -def:int
+        -pen:int
+        -cd:int
+        ____
+        + getStats():String
+        + jungle(ICharacter) {static}
+        ..component setters..
+        + setName():void
+        + setHP():void
+        ..component getters..
+        + getName():void
+        + getHP():void
+    }
+    class mage{
+        -name: String
+        -hp:int
+        -power:int
+        -def:int
+        -pen:int
+        -cd:int
+        ____
+        + getStats():String
+        + mage(ICharacter) {static}
+        ..component setters..
+        + setName():void
+        + setHP():void
+        ..component getters..
+        + getName():void
+        + getHP():void
+    }
+    class solo{
+        -name: String
+        -hp:int
+        -power:int
+        -def:int
+        -pen:int
+        -cd:int
+        ____
+        + solo(ICharacter) {static}
+        + getStats():String
+        ..component setters..
+        + setName():void
+        + setHP():void
+        ..component getters..
+        + getName():void
+        + getHP():void
+    }
+    class support{
+        -name: String
+        -hp:int
+        -power:int
+        -def:int
+        -pen:int
+        -cd:int
+        ____
+        + support(ICharacter) {static}
+        + getStats():String
+        ..component setters..
+        + setName():void
+        + setHP():void
+        ..component getters..
+        + getName():void
+        + getHP():void
+    }
+}
+}
+package factory{
+interface ICharacter{
+    + getData():int[] {abstract}
+}
+class characterFactory{
+    god_selected(String): ICharacter 
+}
+enum gods{
+    Apollo
+    Anhur
+    Janus
+    Persephone
+    Ganesh
+    Geb
+    Achilles
+    Tyr
+    Loki
+    Thanatos
+}
+package characters{
+    class Achilles{
+        + getData():int[]
+    }
+    class Anhur{
+        + getData():int[]
+    }
+    class Apollo{
+        + getData():int[]
+    }
+    class Ganesh{
+        + getData():int[]
+    }
+    class Geb{
+        + getData():int[]
+    }
+    class Janus{
+        + getData():int[]
+    }
+    class Loki{
+        + getData():int[]
+    }
+    class Persephone{
+        + getData():int[]
+    }
+    class Thanatos{
+        + getData():int[]
+    }
+    class Tyr{
+        + getData():int[]
+    }
+}
+}
+package singleton{
+
+    class state{
+        - s:state {static}
+        - status: String
+        - state() {static}
+        + getstate():state {static}
+        + getStatus(): String
+        + setStatis(String): void
+    }
+}
+
+package strategy{
+class MomentGame{
+    + StrategyFire(String,component): component
+    + StrategyGold(String,component): component
+}
+
+interface strategy{
+    + Probablity():int {abstract}
+    + exec():void {abstract}
+    + getPJ():component {abstract}
+}
+
+class rankedFire implements strategy{
+    -jp: component
+    +rankedFire() {static}
+    + Probablity():int 
+    + exec():void 
+    + getPJ():component 
+}
+class casualFire implements strategy{
+    -jp: component
+    +casualFire() {static}
+    + Probablity():int 
+    + exec():void 
+    + getPJ():component 
+}
+class trollFire implements strategy{
+    -jp: component
+    +trollFire() {static}
+    + Probablity():int 
+    + exec():void 
+    + getPJ():component 
+}
+class rankedGold implements strategy{
+    -jp: component
+    + rankedGold() {static}
+    + Probablity():int 
+    + exec():void 
+    + getPJ():component 
+}
+class casualGold implements strategy{
+    -jp: component
+    + rankedGold() {static}
+    + Probablity():int 
+    + exec():void 
+    + getPJ():component 
+}
+class trollGold implements strategy{
+    -jp: component
+    + rankedGold() {static}
+    + Probablity():int 
+    + exec():void 
+    + getPJ():component 
+}
+}
+conditions --|> decorator
+MomentGame --> strategy
+items --|> decorator
+Wizard --> MomentGame 
+state -left-> Game
+state --> state : -s
+rols-up-|>component 
+characters --|> ICharacter
+characterFactory-up->gods
+characterFactory-->ICharacter
+Wizard*-right-ICharacter
+decorator *-right-> component 
+Wizard --> component
+proxy -down- Wizard 
+Wizard -left-> Actions
+Wizard -left-> shop
+Map *--right-- proxy 
+
+@enduml
