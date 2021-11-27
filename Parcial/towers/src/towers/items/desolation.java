@@ -4,12 +4,17 @@ import towers.*;
 
 public class desolation extends decorator{
 	private String name;
+	private int hp;
 	public desolation(component element) {
 		super(element);
 		this.name=element.getName();
+		this.hp=element.getHp();
 		setItem();
 	}
 	
+	public int getHp() {
+		return hp;
+	}
 	
 	
 	public String getStats() {

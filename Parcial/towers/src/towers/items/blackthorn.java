@@ -4,14 +4,17 @@ import towers.*;
 
 public class blackthorn extends decorator {
 	private String name;
-	
+	private int hp;
 	public blackthorn(component element) {
 		super(element);
 		this.name=element.getName();
+		this.hp=element.getHp();
 		setItem();
 	}
 	
-	
+	public int getHp() {
+		return hp;
+	}
 	
 	public String getStats() {
 		return super.getStats();
