@@ -4,9 +4,11 @@ import towers.*;
 
 public class pridwen extends decorator {
 	private String name;
+	private int hp;
 	public pridwen(component element) {
 		super(element);
 		this.name=element.getName();
+		this.hp=element.getHp();
 		setItem();
 	}
 	
@@ -27,5 +29,8 @@ public class pridwen extends decorator {
 	}
 	public int[] values() {
 		return new int[] {0,0,60,0,20};		
+	}
+	public int getHp() {
+		return hp;
 	}
 }

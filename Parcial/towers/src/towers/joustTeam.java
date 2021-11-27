@@ -48,7 +48,7 @@ public class joustTeam extends Map{
 		Scanner input = new Scanner(System.in);
 		state s =state.getstate();
 		while(t==0){
-			if(!hpValidate()) {
+			if(hpValidate()==false) {
 				System.out.println("Un integrante se ha muerto");
 				System.err.println("FIN DE LA PARTIDA");
 				break;
@@ -61,6 +61,7 @@ public class joustTeam extends Map{
 				System.out.print("Actividad individual: ");
 				String act = input.nextLine();
 				team.get(index).action(act,this.getTime(),false);
+				stats();
 			}else if(index == team.size()){
 				System.out.print("Actividad grupal: ");
 				String act = input.nextLine();
